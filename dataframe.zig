@@ -108,8 +108,8 @@ test "Make a data frame" {
   var df : DataFrame = DataFrame.init(std.testing.allocator);
   defer df.deinit();
 
-  var dfc_x1 : DataFrameCol =  .{.int= x1};
-  var dfc_y1 : DataFrameCol =  .{.float= y1};
+  var dfc_x1 = DataFrameCol{.int= x1};
+  var dfc_y1 = DataFrameCol{.float= y1};
 
 
   try df.append("x", &dfc_x1);
